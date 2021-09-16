@@ -1,0 +1,36 @@
+Arguments: 
+  /home/aryan/.nvm/versions/node/v14.17.3/bin/node /home/aryan/.nvm/versions/node/v14.17.3/bin/yarn init
+
+PATH: 
+  /opt/oracle/instantclient_12_2:/home/aryan/.vscode-server/bin/e7d7e9a9348e6a8cc8c03f877d39cb72e5dfb1ff/bin:/opt/oracle/instantclient_12_2:/home/aryan/.nvm/versions/node/v14.17.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Users/aryan/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/aryan/AppData/Local/Programs/Python/Python39/:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2020b/bin:/mnt/c/mingw64/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/erl10.7/bin:/mnt/c/Program Files (x86)/Elixir/bin:/mnt/c/Users/aryan/.mix/escripts:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/aryan/.windows-build-tools/python27/:/mnt/c/Users/aryan/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/PHP:/mnt/c/Program Files/heroku/bin:/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/mnt/c/Users/aryan/spicetify-cli:/mnt/c/Users/aryan/AppData/Roaming/npm:/mnt/c/questasim64_2019.4/win64
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.17.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/home/aryan/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:136216:13)
+      at Interface.emit (events.js:375:28)
+      at Interface._ttyWrite (readline.js:910:16)
+      at ReadStream.onkeypress (readline.js:235:10)
+      at ReadStream.emit (events.js:375:28)
+      at emitKeys (internal/readline/utils.js:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1179:36)
+      at ReadStream.emit (events.js:375:28)
+      at addChunk (internal/streams/readable.js:290:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
