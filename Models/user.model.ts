@@ -1,17 +1,17 @@
-import { Schema, model, Document } from "mongoose"
-import bcrypt from "bcrypt"
+import { Schema, model, Document } from 'mongoose';
+import bcrypt from 'bcrypt';
 
 export type UserI = Document & {
   owner: {
-    name: string
-    email: string
-  }
+    name: string;
+    email: string;
+  };
   forms: {
-    formName: string
-    formId: string
-  }[]
-  password: string
-}
+    formName: string;
+    formId: string;
+  }[];
+  password: string;
+};
 
 const UserSchema = new Schema<UserI>(
   {
@@ -21,20 +21,22 @@ const UserSchema = new Schema<UserI>(
         email: String,
       },
       required: true,
+      _id: false,
     },
     forms: {
       type: [{ formName: String, formId: String }],
       required: true,
+      _id: false,
     },
     password: { type: String, required: true },
   },
   { timestamps: true }
-)
+);
 
-UserSchema.pre("save", async function (next) {
-  const hashedPassword = await bcrypt.hash(this.password, 10)
-  this.password = hashedPassword
-  next()
-})
+UserSchema.pre('save', async function (next) {
+  const hashedPassword = await bcrypt.hash(this.password, 10);
+  this.password = hashedPassword;
+  next();
+});
 
-export default model<UserI>("User", UserSchema, "users")
+export default model<UserI>('User', UserSchema, 'users');

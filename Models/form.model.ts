@@ -1,27 +1,29 @@
-import { Schema, model, Document } from "mongoose"
+import { Schema, model, Document } from 'mongoose';
 
 export type formI = Document & {
   owner: {
-    name: string
-    email: string
-  }
-  formName: string
-  formDescription: string
+    name: string;
+    email: string;
+    id: string;
+  };
+  formName: string;
+  formDescription: string;
   questions: {
-    question: string
-    question_id: string
-    question_type: string
-    question_options?: [string, string, string, string]
-    question_required: boolean
-  }[]
+    question: string;
+    question_id: string;
+    question_type: string;
+    question_options?: [string, string, string, string];
+    question_required: boolean;
+  }[];
   theme: {
     colorPallete: {
-      primaryColor: string
-      secondaryColor: string
-    }
-  }
-  expiry: number
-}
+      primaryColor: string;
+      secondaryColor: string;
+    };
+  };
+  url: string;
+  expiry: number;
+};
 
 const FormSchema = new Schema<formI>(
   {
@@ -29,8 +31,10 @@ const FormSchema = new Schema<formI>(
       type: {
         name: { type: String, required: true },
         email: { type: String, required: true },
+        id: { type: String, required: true },
       },
       required: true,
+      _id: false,
     },
     formName: {
       type: String,
@@ -51,6 +55,7 @@ const FormSchema = new Schema<formI>(
         },
       ],
       required: true,
+      _id: false,
     },
     theme: {
       type: {
@@ -60,11 +65,16 @@ const FormSchema = new Schema<formI>(
         },
       },
       required: true,
+      _id: false,
+    },
+    url: {
+      type: String,
+      required: true,
     },
   },
   {
     timestamps: true,
   }
-)
+);
 
-export default model<formI>("form", FormSchema)
+export default model<formI>('form', FormSchema);

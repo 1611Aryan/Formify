@@ -1,19 +1,19 @@
-import { Schema, model, Document } from "mongoose"
-import { formI } from "./form.model"
-import { UserI } from "./user.model"
+import { Schema, model, Document } from 'mongoose';
+import { formI } from './form.model';
+import { UserI } from './user.model';
 
 type ResponseI = Document & {
-  owner: UserI["owner"]
-  formId: formI["_id"]
-  formName: formI["formName"]
-  page: number
+  owner: UserI['owner'];
+  formId: formI['_id'];
+  formName: formI['formName'];
+  page: number;
   responses: [
     {
-      question_id: string
-      answer: string
+      question_id: string;
+      answer: string;
     }[]
-  ]
-}
+  ];
+};
 
 const ResponseSchema = new Schema<ResponseI>(
   {
@@ -23,6 +23,7 @@ const ResponseSchema = new Schema<ResponseI>(
         email: String,
       },
       required: true,
+      _id: false,
     },
     formId: { type: String, required: true },
     formName: { type: String, required: true },
@@ -30,11 +31,12 @@ const ResponseSchema = new Schema<ResponseI>(
     responses: {
       type: [[{ question_id: String, answer: String }]],
       required: true,
+      _id: false,
     },
   },
   {
     timestamps: true,
   }
-)
+);
 
-export default model<ResponseI>("Responses", ResponseSchema, "responses")
+export default model<ResponseI>('Responses', ResponseSchema, 'responses');

@@ -1,16 +1,16 @@
-import mongoose from "mongoose"
-import { console_info, console_warn } from "../Util/Console"
+import mongoose from 'mongoose';
+import { console_info, console_warn } from '../Util/Console';
 
 const MongoConfig = (): void => {
-  const MongoURI = process.env.MONGODB_URI
+  const MongoURI = process.env.MONGODB_URI;
 
-  mongoose.connect(MongoURI)
+  mongoose.connect(MongoURI);
 
-  const connection = mongoose.connection
+  const { connection } = mongoose;
 
-  connection.once("open", () => console_info("Database is Connected"))
+  connection.once('open', () => console_info('Database is Connected'));
 
-  connection.once("close", () => console_warn("Database is Disconnected"))
-}
+  connection.once('close', () => console_warn('Database is Disconnected'));
+};
 
-export default MongoConfig
+export default MongoConfig;
